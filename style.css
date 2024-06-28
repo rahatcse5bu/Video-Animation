@@ -46,7 +46,7 @@ body {
     position: relative;
 }
 
-/* .intro video {
+.intro video {
     position: fixed;
     top: 0;
     left: 0;
@@ -54,7 +54,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1; /* Behind other content */
-} */
+}
 
 /* Main content section */
 section {
