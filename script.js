@@ -74,7 +74,16 @@ setInterval(() => {
 // Video is in 30fps, so 1 sec = 30 frames => 1000 milliseconds = 30 frames
 // That implies 33.3 milliseconds would be great for each frame
 
-
+let lastPosition = -1;
+videoScene.on("progress", function(e) {
+    if (window.innerWidth > 768) { // Assuming mobile devices are under 768px width
+        let scrollPosition = e.progress * video.duration;
+        if (lastPosition !== scrollPosition) {
+            video.currentTime = scrollPosition;
+            lastPosition = scrollPosition;
+        }
+    }
+});
 // document.addEventListener("DOMContentLoaded", function() {
 //     const video = document.getElementById('myVideo');
 //     const splash = document.querySelector('.splash');
