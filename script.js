@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isVideoFullyLoaded()) {
             hideSplashScreen();
         }
-    }, 1000); // Wait up to 10 seconds
+    }, 5000); // Wait up to 5 seconds
 
 });
 
