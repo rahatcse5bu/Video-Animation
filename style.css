@@ -61,7 +61,3 @@ section {
     padding: 50px;
     background-color: #f0f0f0;
 }
-.intro video {
-    width: 100%; /* Ensures video is responsive */
-    height: auto; /* Maintain aspect ratio */
-}
