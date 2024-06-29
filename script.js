@@ -3,14 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById('myVideo');
     const splash = document.querySelector('.splash');
-// Add touch event listeners for mobile
-document.addEventListener("touchmove", handleScroll);
-document.addEventListener("touchstart", handleScroll);
 
-function handleScroll(e) {
-    let scrollY = window.scrollY || window.pageYOffset;
-    scrollPosition = scrollY / 1000;
-}
 
     // Function to check if video is fully loaded
     function isVideoFullyLoaded() {
@@ -71,6 +64,14 @@ let videoScene = new ScrollMagic.Scene({
 let accelerationRate = 0.1;
 let scrollPosition = 0;
 let delay = 0;
+// Add touch event listeners for mobile
+document.addEventListener("touchmove", handleScroll);
+document.addEventListener("touchstart", handleScroll);
+
+function handleScroll(e) {
+    let scrollY = window.scrollY || window.pageYOffset;
+    scrollPosition = scrollY / 1000;
+}
 // Getting the scroll position from the event and convert it into seconds
 videoScene.on("update", (e) => {
 	scrollPosition = e.scrollPos / 1000;
