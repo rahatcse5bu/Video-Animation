@@ -88,7 +88,7 @@ setInterval(() => {
 let lastPosition = -1;
 videoScene.on("progress", function(e) {
     if (window.innerWidth > 768) { // Assuming mobile devices are under 768px width
-        alert("Hey Mobile");
+     //   alert("Hey Mobile");
         let scrollPosition = e.progress * video.duration;
         if (lastPosition !== scrollPosition) {
             video.currentTime = scrollPosition;
