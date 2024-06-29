@@ -116,24 +116,36 @@ videoScene.on("progress", function(e) {
 //         }
 //     }, 10000); // Fallback timeout
 // });
-let lastScrollTop = 0;
-let frame;
 
-function syncVideoToScroll() {
-    const newScrollTop = window.scrollY || window.pageYOffset;
-    if (newScrollTop !== lastScrollTop) {
-        scrollPosition = newScrollTop / 1000;
-        video.currentTime = scrollPosition;
-        lastScrollTop = newScrollTop;
-    }
-    frame = requestAnimationFrame(syncVideoToScroll);
-}
 
-document.addEventListener('scroll', () => {
-    if (frame) {
-        cancelAnimationFrame(frame);
-    }
-    frame = requestAnimationFrame(syncVideoToScroll);
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('myVideo');
+    const controller = new ScrollMagic.Controller();
+
+    const breakpoints = [0, 500, 1000, 1500, 2000, 2500]; // These should match the scroll positions you want to link to video segments.
+    const videoTimes = [0, 5, 10, 15, 20, 25]; // Times in seconds where each video segment starts.
+
+    breakpoints.forEach((breakpoint, index) => {
+        new ScrollMagic.Scene({
+            triggerElement: document.body,
+            offset: breakpoint,
+            duration: 50 // Small duration means the change happens right at the breakpoint.
+        })
+        .on('enter', () => {
+            video.currentTime = videoTimes[index];
+            video.play(); // Consider auto-pausing after a brief moment if continuous play isn't needed.
+        })
+        .addTo(controller);
+    });
+
+    // Optional: Pause video playback if the user scrolls past the last breakpoint.
+    new ScrollMagic.Scene({
+        triggerElement: document.body,
+        offset: breakpoints[breakpoints.length - 1] + 100,
+        duration: 50
+    })
+    .on('leave', () => {
+        video.pause();
+    })
+    .addTo(controller);
 });
-
-document.addEventListener("DOMContentLoaded", syncVideoToScroll);
