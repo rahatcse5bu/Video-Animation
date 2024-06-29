@@ -3,6 +3,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById('myVideo');
     const splash = document.querySelector('.splash');
+// Add touch event listeners for mobile
+document.addEventListener("touchmove", handleScroll);
+document.addEventListener("touchstart", handleScroll);
+
+function handleScroll(e) {
+    let scrollY = window.scrollY || window.pageYOffset;
+    scrollPosition = scrollY / 1000;
+}
 
     // Function to check if video is fully loaded
     function isVideoFullyLoaded() {
