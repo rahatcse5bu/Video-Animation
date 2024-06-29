@@ -116,3 +116,24 @@ videoScene.on("progress", function(e) {
 //         }
 //     }, 10000); // Fallback timeout
 // });
+let lastScrollTop = 0;
+let frame;
+
+function syncVideoToScroll() {
+    const newScrollTop = window.scrollY || window.pageYOffset;
+    if (newScrollTop !== lastScrollTop) {
+        scrollPosition = newScrollTop / 1000;
+        video.currentTime = scrollPosition;
+        lastScrollTop = newScrollTop;
+    }
+    frame = requestAnimationFrame(syncVideoToScroll);
+}
+
+document.addEventListener('scroll', () => {
+    if (frame) {
+        cancelAnimationFrame(frame);
+    }
+    frame = requestAnimationFrame(syncVideoToScroll);
+});
+
+document.addEventListener("DOMContentLoaded", syncVideoToScroll);
