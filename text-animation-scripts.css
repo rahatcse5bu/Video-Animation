@@ -1,0 +1,24 @@
+
+.content {
+    position: relative;
+    text-align: center;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+}
+
+
+.fade-text, .fade-text-2, .fade-text-3, .fade-text-4, 
+.fade-text-5, .fade-text-6, .fade-text-7, .fade-text-8 {
+    font-size: 1rem;
+    position: fixed; /* Fixed position to keep it centered */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center precisely */
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0; /* Initially hidden */
+}
+
+.spacer {
+    height: 150vh; /* Just to enable scrolling */
+    background-color: #ffffff;
+}
