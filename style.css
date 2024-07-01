@@ -84,4 +84,6 @@ section {
     color: white;
     z-index: 500 !important;
     font-size: 45px;
+    transition: opacity 0.2s ease-in-out !important;
+    opacity: 0; /* Initially hidden */
 }

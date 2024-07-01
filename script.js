@@ -1,7 +1,7 @@
 let currentScroll = 0;
 const maxScroll = 4400; // Adjust this based on the number of text elements
-const scrollStep = 200; // Each text fades in/out in 200px scroll steps
-const delayText = 30; // Delay before the next text starts to fade in
+const scrollStep = 50; // Each text fades in/out in 200px scroll steps
+const delayText = 80; // Delay before the next text starts to fade in
 const stayDuration = 60; // Duration each text stays fully visible
 
 const handleScrollText = (scrollAmount) => {
