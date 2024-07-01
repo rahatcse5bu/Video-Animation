@@ -73,6 +73,7 @@ section {
     /* background-color: darksalmon !important;
     padding: 60px;
     z-index: 10 !important; */
+    padding: 0 !important;
 }
 
 .content .fade-text {
