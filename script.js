@@ -126,7 +126,7 @@ videoScene.on("update", (e) => {
 	const currentScrollPos = e.scrollPos / 1000;
     const deltaY = currentScrollPos - scrollPosition;
     scrollPosition = currentScrollPos;
-    handleScrollText(deltaY * 100)
+    handleScrollText(deltaY * 120)
     // console.log('deltaY: ', deltaY);
 });
 // Delay catches upto the scrollPosition at accelerationRate
