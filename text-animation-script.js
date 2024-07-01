@@ -1,4 +1,4 @@
-let currentScroll = 0;
+/*let currentScroll = 0;
 const maxScroll = 4400; // Adjust this based on the number of text elements
 const scrollStep = 200; // Each text fades in/out in 200px scroll steps
 const delay = 300; // Delay before the next text starts to fade in
@@ -65,3 +65,4 @@ document.addEventListener('touchmove', function(event) {
     touchStartY = touchEndY; // Reset for continuous scrolling
     handleScroll(touchDeltaY);
 });
+*/

@@ -68,3 +68,20 @@ section {
     backface-visibility: hidden;
     perspective: 1000;
 }
+
+.content {
+    /* background-color: darksalmon !important;
+    padding: 60px;
+    z-index: 10 !important; */
+}
+
+.content .fade-text {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: red; */
+    color: white;
+    z-index: 500 !important;
+    font-size: 45px;
+}
