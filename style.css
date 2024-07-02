@@ -63,11 +63,11 @@ section {
 }
 
 
-.intro video {
+/* .intro video {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000;
-}
+} */
 
 .content {
     /* background-color: darksalmon !important;
